@@ -1,85 +1,102 @@
 # Jeopardy! Home Game
 
-A fullscreen Jeopardy! game you can run on any Windows computer. Load your own custom game files, set up players, and play — just like the TV show.
+A fullscreen Jeopardy! game for Windows. No install needed — just download, double-click, and play.
 
 ---
 
-## Quick Start (for players)
+## How to Play (3 steps)
 
-You only need two things:
+### Step 1: Download the game
 
-1. **`Jeopardy.exe`** — the game launcher
-2. **A `.yaml` game file** — contains your categories, clues, and answers
+- [**Download Jeopardy.exe**](https://github.com/json1016/we-have-jeopardy-at-home/releases/latest/download/Jeopardy.exe) — this is the game itself
+- [**Download example_game.yaml**](https://raw.githubusercontent.com/json1016/we-have-jeopardy-at-home/main/example_game.yaml) — this is a sample game with categories and clues
 
-### Steps
+> **Important:** Put both files in the **same folder** (e.g., your Desktop).
 
-1. Put `Jeopardy.exe` and your `.yaml` game file in the **same folder**
-2. Double-click `Jeopardy.exe`
-3. Pick your game file from the dropdown
-4. Click **LAUNCH**
-5. A fullscreen browser window opens — enter player names and start playing
+### Step 2: Launch
 
-### During the Game
+1. Double-click **Jeopardy.exe**
+2. A small window pops up — your game file should appear in the dropdown
+3. Click **LAUNCH**
 
-- Click a dollar amount to reveal a clue
-- Use the **✓** and **✗** buttons to mark correct/wrong answers
-- Click **SKIP** if nobody answers
-- **Ctrl+Z** to undo the last action (misclick protection)
-- **F11** to exit fullscreen
-- Close the browser tab when done — the launcher stays open to start another game
+### Step 3: Play
+
+1. Enter player names and click **START GAME**
+2. Click a dollar amount to reveal a clue — read it out loud
+3. When someone answers, click **✓** (correct) or **✗** (wrong) next to their name
+4. Click **SKIP** if nobody gets it
+5. Keep going until the board is cleared
+
+That's it. You're playing Jeopardy.
+
+### Helpful Shortcuts
+
+| Key | What it does |
+|-----|-------------|
+| **Ctrl+Z** | Undo the last action (misclick protection) |
+| **F11** | Exit fullscreen |
 
 ### Requirements
 
 - **Windows 10 or later**
-- **Firefox** is recommended — the game opens in Firefox if it's installed, otherwise it uses your default browser
+- **Firefox** (recommended) — the game will use Firefox if installed, otherwise your default browser
 
 ---
 
-## Creating Game Files
+## Making Your Own Game Files
 
-Game files are plain text files ending in `.yaml`. You can edit them in Notepad or any text editor.
-
-Here's a minimal example:
+Want to write your own categories? Game files are plain text files ending in `.yaml`. Open one in **Notepad** and follow this format:
 
 ```yaml
 rounds:
   - categories:
-      - name: "World Capitals"
+      - name: "Category Name"
         clues:
-          - prompt: "The capital city of France"
-          - prompt: "The capital city of Japan"
-          - prompt: "This Canadian capital sits on the Ontario-Quebec border"
-          - prompt: "The capital of Brazil, built from scratch in the 1950s"
-          - prompt: "Though Sydney is the largest city, this is Australia's capital"
+          - prompt: "This is the clue players will see"
+          - prompt: "Another clue"
+          - prompt: "A third clue"
+          - prompt: "A fourth clue"
+          - prompt: "A fifth clue"
 
-      - name: "Science"
+      - name: "Another Category"
         clues:
-          - prompt: "The chemical symbol for gold"
-          - prompt: "The powerhouse of the cell"
-          - prompt: "This scientist developed the theory of general relativity"
-          - prompt: "The atomic number of carbon"
+          - prompt: "First clue"
+          - prompt: "Second clue"
+          - prompt: "Third clue"
+          - prompt: "Fourth clue — this one is a Daily Double"
             daily_double: true
-          - prompt: "The name for the study of heredity and genes"
+          - prompt: "Fifth clue"
 
 final_jeopardy:
-  category: "American Literature"
-  prompt: "This 1851 novel begins with the line 'Call me Ishmael'"
+  category: "Final Category"
+  prompt: "The final clue"
 ```
 
-### Rules
+### Tips
 
-- Each round has **categories**, each category has **clues**
-- Every category in a round must have the **same number of clues** (5 is standard)
+- Every category needs the **same number of clues** (5 is standard, like the show)
 - Add `daily_double: true` under any clue to make it a Daily Double
-- You can have **multiple rounds** — Round 1 values are $200–$1000, Round 2 is $400–$2000, etc.
-- `final_jeopardy` is optional — if included, it plays after all rounds finish
-- See `example_game.yaml` for a full two-round game with Final Jeopardy
+- You can add a **second round** by adding another block under `rounds:` (values double automatically)
+- `final_jeopardy` is optional
+- **Spacing matters** — use spaces, not tabs, and keep the indentation consistent
+- Look at `example_game.yaml` for a complete working example
+
+---
+
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| Windows says "Windows protected your PC" | Click **More info** → **Run anyway** (this is normal for unsigned .exe files) |
+| No game files show up in the launcher | Make sure the `.yaml` file is in the **same folder** as `Jeopardy.exe` |
+| The game doesn't open | Make sure you have a web browser installed (Firefox recommended) |
+| The text looks wrong | Make sure you're using a modern browser — Firefox or Chrome work best |
 
 ---
 
 ## Building From Source
 
-Only needed if you want to modify the game or rebuild the exe yourself.
+Only needed if you want to modify the game or rebuild the exe.
 
 ### Prerequisites
 
@@ -97,9 +114,7 @@ python -m PyInstaller --onefile --windowed --name Jeopardy --add-data "dist;dist
 
 The exe appears in `output/`.
 
-### Dev Mode
-
-Run the game directly in a browser with hot reload (no exe needed):
+### Dev Mode (no exe needed)
 
 ```bash
 cross-env GAME_FILE=example_game.yaml npm run dev
