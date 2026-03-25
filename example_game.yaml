@@ -1,0 +1,56 @@
+rounds:
+  - categories:
+      - name: "World Capitals"
+        clues:
+          - prompt: "The capital city of France"
+          - prompt: "The capital city of Japan"
+          - prompt: "Though Sydney is the largest city, this is Australia's capital"
+          - prompt: "The capital of Brazil, built from scratch in the 1950s"
+          - prompt: "This Canadian capital sits on the Ontario-Quebec border"
+
+      - name: "Science"
+        clues:
+          - prompt: "The chemical symbol for gold"
+          - prompt: "The powerhouse of the cell"
+          - prompt: "This scientist developed the theory of general relativity"
+          - prompt: "The atomic number of carbon"
+            daily_double: true
+          - prompt: "The name for the study of heredity and genes"
+
+      - name: "Pop Culture"
+        clues:
+          - prompt: "She played Katniss Everdeen in The Hunger Games"
+          - prompt: "This streaming giant produced Stranger Things"
+          - prompt: "Taylor Swift's 2023 tour, one of the highest-grossing of all time"
+          - prompt: "The name of Tony Stark's AI assistant in the Iron Man films"
+          - prompt: "This video game franchise features characters named Mario and Luigi"
+
+  - categories:
+      - name: "History"
+        clues:
+          - prompt: "The year World War II ended"
+          - prompt: "This empire was ruled by Julius Caesar"
+          - prompt: "She was the first woman to win a Nobel Prize"
+          - prompt: "The ancient wonder located on the Giza Plateau"
+            daily_double: true
+          - prompt: "The year the Berlin Wall fell"
+
+      - name: "Words & Language"
+        clues:
+          - prompt: "A word that reads the same forwards and backwards"
+          - prompt: "The fear of spiders is called this"
+          - prompt: "The world's most widely spoken language by native speakers"
+          - prompt: "A word that sounds like what it describes, like 'buzz' or 'sizzle'"
+          - prompt: "The study of the origin of words"
+
+      - name: "Geography"
+        clues:
+          - prompt: "The longest river in the world"
+          - prompt: "The smallest country in the world by area"
+          - prompt: "This mountain is the tallest on Earth measured from base to peak"
+          - prompt: "The continent with the most countries"
+          - prompt: "The country with the most time zones"
+
+final_jeopardy:
+  category: "American Literature"
+  prompt: "This 1851 novel begins with the line 'Call me Ishmael'"

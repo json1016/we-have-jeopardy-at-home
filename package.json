@@ -1,0 +1,26 @@
+{
+  "name": "jeopardy",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "g1": "cross-env GAME_FILE=g1.yaml vite",
+    "g2": "cross-env GAME_FILE=g2.yaml vite",
+    "g3": "cross-env GAME_FILE=g3.yaml vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/libre-baskerville": "^5.2.10",
+    "@fontsource/oswald": "^5.2.8",
+    "js-yaml": "^4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "vite": "^7.3.1"
+  }
+}
