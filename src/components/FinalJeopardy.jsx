@@ -155,7 +155,7 @@ const styles = {
     justifyContent: 'center',
     fontFamily: FONTS.display,
     fontWeight: 700,
-    fontSize: 'clamp(32px, 7vw, 96px)',
+    fontSize: 'clamp(28px, 5.5vw, 72px)',
     color: COLORS.white,
     textAlign: 'center',
     lineHeight: 1.4,
