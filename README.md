@@ -9,7 +9,7 @@ A fullscreen Jeopardy! game for Windows. No install needed — just download, do
 ### Step 1: Download the game
 
 - [**Download Jeopardy.exe**](https://github.com/json1016/we-have-jeopardy-at-home/releases/latest/download/Jeopardy.exe) — this is the game itself
-- [**Download example_game.yaml**](https://github.com/json1016/we-have-jeopardy-at-home/releases/latest/download/example_game.yaml) — this is a sample game with categories and clues
+- [**Download example_game.yaml**](https://raw.githubusercontent.com/json1016/we-have-jeopardy-at-home/main/example_game.yaml) — this is a sample game with categories and clues
 
 > **Important:** Put both files in the **same folder** (e.g., your Desktop).
 
